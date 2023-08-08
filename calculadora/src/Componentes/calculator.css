@@ -1,0 +1,48 @@
+button{
+    width: 3em;
+    height: 3em;
+    border-radius: 2em;
+    border: none;
+    margin: 0.3em;
+    font-size: 1.5em;
+}
+
+
+
+button:hover{
+    cursor: pointer;
+}
+
+h1{
+    font-family: Arial, Helvetica, sans-serif;
+    color: beige;
+}
+.zero{
+    width: 6.5em;
+}
+
+.calc{
+    padding: 1em;
+    background-color: black;
+    border-radius: 1em;
+}
+
+.operator{
+    background-color: #FF9500;
+    color:white ;
+}
+
+.gray{
+    background-color: #505050;
+    color: aliceblue;
+}
+
+.result{
+    color: aliceblue;
+    display: flex;
+    justify-content:end;
+    margin-right: 0.5em;
+    font-size:3.5em;
+    margin-bottom: 1px;
+    height: 70px;
+}
