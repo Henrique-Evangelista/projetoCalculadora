@@ -19,31 +19,30 @@ function Calculator() {
       setCalc("");
     }
   }
-  function handleCont() {
+ function handleCont() {
     if (parseFloat(calc) && operator && parseFloat(oldCalc)) {
-      if (operator === "x") {
-        setCalc(parseFloat(oldCalc) * parseFloat(calc));
-      } else if (operator === "-") {
-        setCalc(parseFloat(oldCalc) - parseFloat(calc));
-      } else if (operator === "+") {
-        setCalc(parseFloat(oldCalc) + parseFloat(calc));
-      } else if (operator === "/") {
-        setCalc(parseFloat(oldCalc) / parseFloat(calc));
-      } else {
+        setCalc(
+            operator === "x" ? parseFloat(oldCalc) * parseFloat(calc) :
+            operator === "-" ? parseFloat(oldCalc) - parseFloat(calc) :
+            operator === "+" ? parseFloat(oldCalc) + parseFloat(calc) :
+            operator === "/" ? parseFloat(oldCalc) / parseFloat(calc) :
+            (() => {
+                setCalc("Erro");
+                setTimeout(() => {
+                    handleClear();
+                }, 3000);
+            })()
+        );
+        setOldCalc("");
+        setOperator("");
+    } else if (calc !== "") {
         setCalc("Erro");
         setTimeout(() => {
-          handleClear();
+            handleClear();
         }, 3000);
-      }
-      setOldCalc("");
-      setOperator("");
-    } else if (calc !== "") {
-      setCalc("Erro");
-      setTimeout(() => {
-        handleClear();
-      }, 3000);
     }
-  }
+}
+
 
   function handleSign() {
     if (calc > 0) {
